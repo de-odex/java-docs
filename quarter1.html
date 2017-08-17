@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>First Quarter &#8212; Java-docs 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="first-quarter">
+<h1>First Quarter<a class="headerlink" href="#first-quarter" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Java Docs!</p>
+<div class="section" id="hello-world">
+<h2>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>This is a Hello World program coded in java, with the filename “java.java”</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">java</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Some explanations:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">public</span></code>, <code class="docutils literal"><span class="pre">static</span></code>, <code class="docutils literal"><span class="pre">class</span></code>, and <code class="docutils literal"><span class="pre">void</span></code> are called <em>keywords</em></li>
+</ul>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="docutils">
+<dt>Types of keywords:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>the visibility/access keywords: defines which applications can view the class</dt>
+<dd><dl class="first last docutils">
+<dt><code class="docutils literal"><span class="pre">public</span></code></dt>
+<dd><p class="first last">Means literally anything in the java universe can access the class/method</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">private</span></code></dt>
+<dd><p class="first">Means only the class it is in can access it, no matter what; ex. with a program like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">MainProgram</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="k">class</span> <span class="nc">aPublicClass</span> <span class="p">{</span>
+        <span class="n">private</span> <span class="n">static</span> <span class="n">void</span> <span class="n">privFunction</span><span class="p">(){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;I can only be printed within this class&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You cannot do this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">MainProgram.aPublicClass</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">MainProgram2</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">aPublicClass</span><span class="o">.</span><span class="n">privFunction</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>But you can do this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">MainProgram</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="k">class</span> <span class="nc">aPublicClass</span> <span class="p">{</span>
+
+        <span class="n">public</span> <span class="n">aPublicClass</span><span class="p">(){</span>
+
+        <span class="p">}</span> <span class="o">//</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="s2">&quot;constructor&quot;</span><span class="p">,</span> <span class="n">will</span> <span class="n">be</span> <span class="n">explained</span> <span class="n">soon</span>
+
+        <span class="n">private</span> <span class="n">void</span> <span class="n">privFunction</span><span class="p">(){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;I can only be printed within this class&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">runPrivFunction</span><span class="p">(){</span>
+            <span class="n">aPublicClass</span> <span class="n">apc</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Main</span><span class="o">.</span><span class="n">aPublicClass</span><span class="p">();</span>
+            <span class="n">apc</span><span class="o">.</span><span class="n">privFunction</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">aPublicClass</span><span class="o">.</span><span class="n">runPrivFunction</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="last">This basically means you’re making a</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">protected</span></code></dt>
+<dd><p class="first">Means only the class it is in can access it, though if you make an object of the class you may access it. ex.:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">MainProgram</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">aPublicClass</span> <span class="p">{</span>
+        <span class="n">private</span> <span class="n">static</span> <span class="n">void</span> <span class="n">privFunction</span><span class="p">(){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;I can only be printed within this class&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Java-docs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, deodex.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/quarter1.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
